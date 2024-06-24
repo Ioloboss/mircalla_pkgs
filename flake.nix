@@ -2,11 +2,15 @@
 	description = "Mircalla Packages";
 
 	outputs = { self, nixpkgs }:{
-		apply_system = { system }: {
-			status-bar = import ./status-bar.nix { pkgs = nixpkgs { inherit system; }; };
-			flashcards = import ./flashcards.nix { pkgs = nixpkgs { inherit system; }; };
-			diary = import ./diary.nix { pkgs = nixpkgs { inherit system; }; };
-			fhs = import ./fhs.nix { pkgs = nixpkgs { inherit system; }; };
-		};
+		apply_system = { system }:
+			let
+				pkgs = import nixpkgs { inherit system; };
+			in
+			{
+				status-bar = import ./status-bar.nix { inherit pkgs; };
+				flashcards = import ./flashcards.nix { inherit pkgs; };
+				diary = import ./diary.nix { inherit pkgs; };
+				fhs = import ./fhs.nix { inherit pkgs; };
+			};
 	};
 }
