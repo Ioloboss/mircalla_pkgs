@@ -6,8 +6,8 @@ pkgs.rustPlatform.buildRustPackage {
 	src = pkgs.fetchFromGitHub {
 		owner = "ioloboss";
 		repo = "flashcards";
-		rev = "887a8aa";
-		hash = "sha256-swXye6S4ZojijtBb2KXcrLVZ97Whu8OrYd/7GdA/4Xo=";
+		rev = "646a954";
+		hash = "sha256-Nw4PVf4EUGG7aWEuoyq8mmmGmyypLAGpCI4JXXDmU60=";
 	};
 	cargoHash = "sha256-Lgt+JRbZXEwugDigJvJpMHhicjqHI00hb1/TGxykMJk=";
 }
